@@ -4,4 +4,4 @@ COPY . .
 
 RUN ls
 
-RUN cat /run/secrets/secretxt
+RUN cat Dockerfile && cat Dockerfile.1
