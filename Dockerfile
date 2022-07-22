@@ -1,7 +1,6 @@
 FROM anasty17/mltb:latest
 
-COPY . .
+DOCKER_BUILDKIT=1 BUILDKIT_PROGRESS=plain docker build --secret id=mysecret,src=file.txt .
 
-RUN ls
 
-RUN cat Dockerfile && cat Dockerfile.1
+RUN --mount=type=secret,id=mysecret cat /run/secrets/mysecret
